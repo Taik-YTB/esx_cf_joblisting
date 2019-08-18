@@ -4,7 +4,7 @@ local Keys = {
 
 
 _menuPool = NativeUI.CreatePool()
-mainMenu = NativeUI.CreateMenu(GetPlayerName(source), "Bienvenue au pole emplois!", Config.MenuX, Config.MenuY,nil,nil,nil,Config.MenuColor.r,Config.MenuColor.g,Config.MenuColor.b,Config.MenuColor.a)
+mainMenu = NativeUI.CreateMenu(GetPlayerName(PlayerId()), "Bienvenue au pole emplois!", Config.MenuX, Config.MenuY,nil,nil,nil,Config.MenuColor.r,Config.MenuColor.g,Config.MenuColor.b,Config.MenuColor.a)
 _menuPool:Add(mainMenu)
 
 function AddMenuJobMenu(menu)
