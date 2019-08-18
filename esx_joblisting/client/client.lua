@@ -1,10 +1,16 @@
 ESX = nil
-
+Jobs = {}
 Citizen.CreateThread(function()
     while ESX == nil do
-	TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-	Citizen.Wait(0)
+        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+        Citizen.Wait(0)
     end
+    ESX.TriggerServerCallback('esx_joblisting:getJobsList', function(data)
+        Jobs = data
+    end)
+
+    Wait(500)
+    AddMenuJobMenu(mainMenu)
 end)
 
 -- blips
